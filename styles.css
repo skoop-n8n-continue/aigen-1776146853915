@@ -1,0 +1,135 @@
+:root {
+    --primary-color: #00b7af;
+    --dark-bg: #10181f;
+    --light-text: #ffffff;
+    --secondary-text: #6a7071;
+    --button-bg: #1e2933;
+    --button-hover: #2c3e50;
+    --action-bg: #34495e;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* For digital signage, prevent accidental scrolling */
+}
+
+.calculator-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.calculator {
+    background-color: #0d1217;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.display {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 24px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    word-wrap: break-word;
+    word-break: break-all;
+    min-height: 120px;
+}
+
+.previous-operand {
+    color: var(--secondary-text);
+    font-size: 1.2rem;
+    height: 1.5rem;
+}
+
+.current-operand {
+    color: var(--light-text);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    background-color: var(--button-bg);
+    color: var(--light-text);
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 20px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn.operator {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.btn.action {
+    background-color: var(--action-bg);
+    font-size: 1.2rem;
+}
+
+.btn.equal {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+    font-weight: 600;
+}
+
+.btn.equal:hover {
+    background-color: #00d1c8;
+}
+
+.col-2 {
+    grid-column: span 2;
+}
+
+/* Digital Signage Optimization */
+@media (min-width: 800px) {
+    .calculator-container {
+        max-width: 500px;
+    }
+    .btn {
+        padding: 30px;
+        font-size: 2rem;
+    }
+    .current-operand {
+        font-size: 3.5rem;
+    }
+}

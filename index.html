@@ -8,7 +8,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>Skoop Calculator</title>
-    <link rel="stylesheet" href="styles.css?v=w2h1t3">
+    <link rel="stylesheet" href="styles.css?v=s8k3m2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -21,32 +21,56 @@
                 <div class="current-operand" id="current-operand">0</div>
             </div>
             <div class="buttons">
-                <button class="btn col-2 action" onclick="clearDisplay()">AC</button>
+                <!-- Scientific Row 1 -->
+                <button class="btn scientific" onclick="scientific('sin')">sin</button>
+                <button class="btn scientific" onclick="scientific('cos')">cos</button>
+                <button class="btn scientific" onclick="scientific('tan')">tan</button>
+                <button class="btn scientific" onclick="scientific('log')">log</button>
+                <button class="btn scientific" onclick="scientific('ln')">ln</button>
+
+                <!-- Scientific Row 2 -->
+                <button class="btn scientific" onclick="scientific('sqrt')">√</button>
+                <button class="btn scientific" onclick="scientific('pow')">xʸ</button>
+                <button class="btn scientific" onclick="scientific('pi')">π</button>
+                <button class="btn scientific" onclick="scientific('e')">e</button>
+                <button class="btn scientific" onclick="scientific('exp')">exp</button>
+
+                <!-- Row 1 -->
+                <button class="btn scientific" onclick="chooseOperator('%')">mod</button>
+                <button class="btn action col-2" onclick="clearDisplay()">AC</button>
                 <button class="btn action" onclick="deleteLast()">DEL</button>
                 <button class="btn operator" onclick="chooseOperator('÷')">÷</button>
 
+                <!-- Row 2 -->
+                <button class="btn scientific" onclick="scientific('abs')">|x|</button>
                 <button class="btn" onclick="appendNumber('7')">7</button>
                 <button class="btn" onclick="appendNumber('8')">8</button>
                 <button class="btn" onclick="appendNumber('9')">9</button>
                 <button class="btn operator" onclick="chooseOperator('×')">×</button>
 
+                <!-- Row 3 -->
+                <button class="btn scientific" onclick="scientific('fact')">x!</button>
                 <button class="btn" onclick="appendNumber('4')">4</button>
                 <button class="btn" onclick="appendNumber('5')">5</button>
                 <button class="btn" onclick="appendNumber('6')">6</button>
                 <button class="btn operator" onclick="chooseOperator('-')">−</button>
 
+                <!-- Row 4 -->
+                <button class="btn scientific" onclick="scientific('inv')">1/x</button>
                 <button class="btn" onclick="appendNumber('1')">1</button>
                 <button class="btn" onclick="appendNumber('2')">2</button>
                 <button class="btn" onclick="appendNumber('3')">3</button>
                 <button class="btn operator" onclick="chooseOperator('+')">+</button>
 
+                <!-- Row 5 -->
+                <button class="btn scientific" onclick="scientific('sq')">x²</button>
                 <button class="btn" onclick="appendNumber('.')">.</button>
                 <button class="btn" onclick="appendNumber('0')">0</button>
                 <button class="btn col-2 equal" onclick="compute()">=</button>
             </div>
         </div>
     </div>
-    <script src="script.js?v=w2h1t3"></script>
+    <script src="script.js?v=s8k3m2"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {

@@ -6,6 +6,8 @@
     --button-bg: #f1f3f4;
     --button-hover: #e8eaed;
     --action-bg: #dadce0;
+    --scientific-bg: #f8f9fa;
+    --scientific-text: #5f6368;
 }
 
 * {
@@ -22,12 +24,12 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden; /* For digital signage, prevent accidental scrolling */
+    overflow: hidden;
 }
 
 .calculator-container {
     width: 100%;
-    max-width: 400px;
+    max-width: 550px;
     padding: 20px;
 }
 
@@ -35,7 +37,7 @@ body {
     background-color: #ffffff;
     border-radius: 24px;
     padding: 24px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
     border: 1px solid #eef2f6;
 }
 
@@ -47,29 +49,29 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: space-around;
+    justify-content: center;
     word-wrap: break-word;
     word-break: break-all;
-    min-height: 120px;
+    min-height: 140px;
 }
 
 .previous-operand {
     color: var(--secondary-text);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     height: 1.5rem;
+    margin-bottom: 4px;
 }
 
 .current-operand {
     color: var(--dark-text);
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 600;
-    margin-top: 8px;
 }
 
 .buttons {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
 }
 
 .btn {
@@ -77,10 +79,10 @@ body {
     outline: none;
     background-color: var(--button-bg);
     color: var(--dark-text);
-    font-size: 1.5rem;
-    font-weight: 400;
-    padding: 20px;
-    border-radius: 16px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 16px 8px;
+    border-radius: 12px;
     cursor: pointer;
     transition: all 0.2s ease;
     display: flex;
@@ -90,7 +92,7 @@ body {
 
 .btn:hover {
     background-color: var(--button-hover);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 .btn:active {
@@ -100,17 +102,25 @@ body {
 .btn.operator {
     color: var(--primary-color);
     font-weight: 600;
+    font-size: 1.4rem;
 }
 
 .btn.action {
     background-color: var(--action-bg);
-    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.btn.scientific {
+    background-color: var(--scientific-bg);
+    color: var(--scientific-text);
+    font-size: 1rem;
 }
 
 .btn.equal {
     background-color: var(--primary-color);
     color: #ffffff;
     font-weight: 600;
+    font-size: 1.4rem;
 }
 
 .btn.equal:hover {
@@ -124,13 +134,16 @@ body {
 /* Digital Signage Optimization */
 @media (min-width: 800px) {
     .calculator-container {
-        max-width: 500px;
+        max-width: 700px;
     }
     .btn {
-        padding: 30px;
-        font-size: 2rem;
+        padding: 24px 12px;
+        font-size: 1.5rem;
+    }
+    .btn.scientific {
+        font-size: 1.2rem;
     }
     .current-operand {
-        font-size: 3.5rem;
+        font-size: 4rem;
     }
 }
